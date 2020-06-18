@@ -40,14 +40,16 @@ def to_categorical(y, num_classes=None, dtype='float32'):
 
   Example:
 
-  >>> a = tf.keras.utils.to_categorical([0, 1, 2, 3], num_classes=4)
-  >>> a = tf.constant(a, shape=[4, 4])
+  >>> a =  tf.keras.utils.to_categorical([0, 1, 2, 3, 2, 1], num_classes=4)
+  >>> a = tf.constant(a, shape=[6, 4])
   >>> print(a)
   tf.Tensor(
-    [[1. 0. 0. 0.]
-     [0. 1. 0. 0.]
-     [0. 0. 1. 0.]
-     [0. 0. 0. 1.]], shape=(4, 4), dtype=float32)
+      [[1. 0. 0. 0.]
+       [0. 1. 0. 0.]
+       [0. 0. 1. 0.]
+       [0. 0. 0. 1.]
+       [0. 0. 1. 0.]
+       [0. 1. 0. 0.]], shape=(6, 4), dtype=float32)
 
   >>> b = tf.constant([.9, .04, .03, .03,
   ...                  .3, .45, .15, .13,
